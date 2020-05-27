@@ -42,7 +42,7 @@ def check_dependencies():
     try:
         import numpy
     except ImportError:
-        install_requires.append('numpy')
+        install_requires.append('numpy==1.17.5')
     try:
         import scipy
     except ImportError:
@@ -70,7 +70,7 @@ install_requires.extend(["setuptools",
                          "fcsparser>=0.1.1"])
 
 setup(
-    name='FlowCytometryTools',
+    name='numpy-reduced-flowcytometrytools',
     packages=find_packages(),
     version=version,
     description='A python package for performing flow cytometry analysis',
@@ -80,7 +80,6 @@ setup(
     download_url='https://github.com/eyurtsev/FlowCytometryTools/archive/v{0}.zip'.format(version),
     keywords=['flow cytometry', 'data analysis', 'cytometry', 'single cell'],
     license='MIT',
-    setup_requires=["numpy"],  # Needed to install numpy
     install_requires=install_requires,
     classifiers=[
         'Intended Audience :: Science/Research',
